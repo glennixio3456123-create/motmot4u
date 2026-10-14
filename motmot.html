@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Our 4th Monthsary 💗</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&family=Caveat:wght@500;700&family=DM+Sans:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --night: #24102f;
+            --plum: #3b1b4d;
+            --rose: #ff7aa2;
+            --peach: #ffc9b5;
+            --lilac: #cdb4ff;
+            --paper: #fff8fb;
+            --ink: #3a2342;
+            --serif: 'Fraunces', Georgia, serif;
+            --hand: 'Caveat', 'Segoe Script', cursive;
+            --sans: 'DM Sans', system-ui, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: var(--sans);
+            color: #fbeaf3;
+            background: var(--night);
+            line-height: 1.6;
+            overflow-x: hidden
+        }
+
+        section {
+            padding: 96px 22px;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative
+        }
+
+        h2 {
+            font-family: var(--serif);
+            font-weight: 500;
+            font-size: clamp(2rem, 6vw, 3.2rem);
+            line-height: 1.1;
+            margin-bottom: 12px
+        }
+
+        .sub {
+            font-family: var(--hand);
+            font-size: 1.7rem;
+            color: var(--peach);
+            margin-bottom: 40px
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--lilac);
+            outline-offset: 3px
+        }
+
+        /* background glow + floating hearts */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background: radial-gradient(60% 50% at 20% 10%, #5a2a73 0, transparent 70%), radial-gradient(50% 50% at 90% 80%, #7a2c5e 0, transparent 70%), var(--night)
+        }
+
+        #hearts {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden
+        }
+
+        .h {
+            position: absolute;
+            bottom: -40px;
+            opacity: 0;
+            animation: rise linear infinite
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0) rotate(0);
+                opacity: 0
+            }
+
+            10% {
+                opacity: .7
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(40deg);
+                opacity: 0
+            }
+        }
+
+        /* hero */
+        #hero {
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            max-width: none
+        }
+
+        .four {
+            font-family: var(--serif);
+            font-size: clamp(9rem, 36vw, 20rem);
+            line-height: .8;
+            font-weight: 500;
+            background: linear-gradient(160deg, var(--peach), var(--rose) 55%, var(--lilac));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            animation: beat 2.4s ease-in-out infinite
+        }
+
+        @keyframes beat {
+
+            0%,
+            100% {
+                transform: scale(1)
+            }
+
+            12% {
+                transform: scale(1.05)
+            }
+
+            24% {
+                transform: scale(1)
+            }
+
+            36% {
+                transform: scale(1.04)
+            }
+        }
+
+        .four small {
+            position: absolute;
+            right: -.1em;
+            top: .05em;
+            font-size: .16em;
+            -webkit-text-fill-color: initial
+        }
+
+        #hero h1 {
+            font-family: var(--serif);
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.6rem, 5vw, 2.6rem);
+            margin-top: 18px
+        }
+
+        #hero p.hand {
+            font-family: var(--hand);
+            font-size: 1.8rem;
+            color: var(--peach);
+            margin: 6px 0 34px
+        }
+
+        .counter {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center
+        }
+
+        .counter div {
+            min-width: 78px;
+            padding: 12px 10px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid rgba(255, 255, 255, .14);
+            backdrop-filter: blur(6px)
+        }
+
+        .counter b {
+            display: block;
+            font-family: var(--serif);
+            font-size: 1.9rem;
+            font-weight: 500
+        }
+
+        .counter span {
+            font-size: .78rem;
+            opacity: .75
+        }
+
+        .scroll {
+            margin-top: 44px;
+            font-family: var(--hand);
+            font-size: 1.4rem;
+            color: var(--lilac);
+            text-decoration: none;
+            animation: bob 2s infinite
+        }
+
+        @keyframes bob {
+            50% {
+                transform: translateY(8px)
+            }
+        }
+
+        /* gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 34px 26px;
+            padding: 10px
+        }
+
+        .pol {
+            background: var(--paper);
+            color: var(--ink);
+            padding: 12px 12px 16px;
+            border-radius: 6px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, .4);
+            transform: rotate(var(--r, -2deg));
+            transition: transform .35s cubic-bezier(.2, .9, .3, 1.3);
+            cursor: pointer;
+            position: relative
+        }
+
+        .pol:nth-child(2n) {
+            --r: 2.5deg;
+            margin-top: 22px
+        }
+
+        .pol:nth-child(3n) {
+            --r: -1deg
+        }
+
+        .pol:hover,
+        .pol:focus-visible {
+            transform: rotate(0) scale(1.06) translateY(-6px);
+            z-index: 3
+        }
+
+        .pol .img {
+            aspect-ratio: 4/5;
+            border-radius: 3px;
+            background: linear-gradient(135deg, #ffe3ee, #e8dcff);
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            text-align: center;
+            font-size: .85rem;
+            color: #8a5a86
+        }
+
+        .pol .img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block
+        }
+
+        .pol .img em {
+            font-style: normal;
+            padding: 12px
+        }
+
+        .pol .img em::before {
+            content: "＋";
+            display: block;
+            font-size: 2rem;
+            color: var(--rose)
+        }
+
+        .pol p {
+            font-family: var(--hand);
+            font-size: 1.5rem;
+            text-align: center;
+            margin-top: 10px;
+            line-height: 1.1
+        }
+
+        .pol::before {
+            content: "";
+            position: absolute;
+            top: -11px;
+            left: 50%;
+            width: 74px;
+            height: 22px;
+            transform: translateX(-50%) rotate(-3deg);
+            background: rgba(255, 201, 181, .75);
+            border-radius: 2px
+        }
+
+        .tip {
+            font-size: .85rem;
+            opacity: .65;
+            margin-top: 26px;
+            text-align: center
+        }
+
+        /* timeline */
+        .line {
+            position: relative;
+            padding-left: 34px;
+            display: grid;
+            gap: 30px
+        }
+
+        .line::before {
+            content: "";
+            position: absolute;
+            left: 9px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(var(--rose), var(--lilac))
+        }
+
+        .m {
+            position: relative;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 20px;
+            padding: 20px 22px
+        }
+
+        .m::before {
+            content: "♥";
+            position: absolute;
+            left: -34px;
+            top: 18px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--rose);
+            color: #fff;
+            font-size: .7rem;
+            display: grid;
+            place-items: center
+        }
+
+        .m h3 {
+            font-family: var(--serif);
+            font-weight: 500;
+            font-size: 1.35rem
+        }
+
+        .m h3 span {
+            font-family: var(--hand);
+            color: var(--peach);
+            font-size: 1.5rem;
+            margin-right: 8px
+        }
+
+        .m p {
+            opacity: .85;
+            margin-top: 4px
+        }
+
+        /* reasons */
+        .reasons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px
+        }
+
+        .card {
+            perspective: 800px;
+            height: 150px;
+            cursor: pointer;
+            border: 0;
+            background: none;
+            color: inherit;
+            font: inherit
+        }
+
+        .card i {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            padding: 18px;
+            border-radius: 20px;
+            backface-visibility: hidden;
+            transition: transform .6s;
+            font-style: normal;
+            text-align: center
+        }
+
+        .card .f {
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid rgba(255, 255, 255, .15);
+            font-family: var(--hand);
+            font-size: 1.8rem;
+            color: var(--peach)
+        }
+
+        .card .b {
+            background: linear-gradient(140deg, var(--rose), #b36bff);
+            transform: rotateY(180deg);
+            color: #fff;
+            font-weight: 500
+        }
+
+        .card {
+            position: relative
+        }
+
+        .card.on .f {
+            transform: rotateY(180deg)
+        }
+
+        .card.on .b {
+            transform: rotateY(0)
+        }
+
+        /* letter */
+        #letter {
+            text-align: center
+        }
+
+        .env {
+            width: min(340px, 86vw);
+            height: 220px;
+            margin: 30px auto 0;
+            position: relative;
+            cursor: pointer;
+            border: 0;
+            background: none;
+            display: block
+        }
+
+        .env .back {
+            position: absolute;
+            inset: 0;
+            background: var(--rose);
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .4)
+        }
+
+        .env .flap {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 60%;
+            background: #ff95b4;
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            transform-origin: top;
+            transition: transform .6s;
+            z-index: 3
+        }
+
+        .env .front {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: linear-gradient(135deg, transparent 49.5%, #ff5f8f 50%) left/50% 100% no-repeat, linear-gradient(225deg, transparent 49.5%, #ff5f8f 50%) right/50% 100% no-repeat;
+            border-radius: 10px
+        }
+
+        .env .seal {
+            position: absolute;
+            left: 50%;
+            top: 48%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+            font-size: 2.2rem;
+            transition: opacity .3s
+        }
+
+        .env.open .flap {
+            transform: rotateX(180deg);
+            z-index: 0
+        }
+
+        .env.open .seal {
+            opacity: 0
+        }
+
+        .env small {
+            position: absolute;
+            bottom: -34px;
+            left: 0;
+            right: 0;
+            font-family: var(--hand);
+            font-size: 1.4rem;
+            color: var(--peach)
+        }
+
+        .env.open small {
+            display: none
+        }
+
+        .paper {
+            max-width: 620px;
+            margin: 0 auto;
+            background: var(--paper);
+            color: var(--ink);
+            border-radius: 8px;
+            text-align: left;
+            padding: 0 clamp(22px, 5vw, 46px);
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 1.2s ease, opacity .6s, margin .6s, padding .6s;
+            background-image: repeating-linear-gradient(transparent 0 33px, #f3d6e2 33px 34px)
+        }
+
+        .paper.show {
+            max-height: 2000px;
+            opacity: 1;
+            margin-top: 30px;
+            padding-top: 34px;
+            padding-bottom: 34px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, .45)
+        }
+
+        .paper p {
+            font-family: var(--hand);
+            font-size: 1.55rem;
+            line-height: 34px;
+            margin-bottom: 0;
+            white-space: pre-line;
+            min-height: 34px
+        }
+
+        .paper .sign {
+            text-align: right;
+            margin-top: 34px;
+            font-size: 1.9rem;
+            color: #d6457b
+        }
+
+        footer {
+            text-align: center;
+            padding: 70px 20px 90px;
+            font-family: var(--hand);
+            font-size: 1.7rem;
+            color: var(--peach)
+        }
+
+        footer button {
+            display: block;
+            margin: 22px auto 0;
+            padding: 12px 26px;
+            border-radius: 99px;
+            border: 0;
+            background: var(--rose);
+            color: #fff;
+            font: 500 1rem var(--sans);
+            cursor: pointer
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            * {
+                animation: none !important;
+                transition: none !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="hearts" aria-hidden="true"></div>
+
+    <section id="hero">
+        <div class="four">4<small>🌷</small></div>
+        <h1 id="title">Happy 4th Monthsary, my love</h1>
+        <p class="hand" id="tag">four months of choosing each other</p>
+        <div class="counter" id="counter" aria-live="off"></div>
+        <a class="scroll" href="#photos">scroll down, love ↓</a>
+    </section>
+
+    <section id="photos">
+        <h2>Our little moments</h2>
+        <p class="sub">every picture, a favorite memory</p>
+        <div class="gallery" id="gallery"></div>
+    </section>
+
+    <section id="story">
+        <h2>Four months, four chapters</h2>
+        <p class="sub">how we got here</p>
+        <div class="line" id="line"></div>
+    </section>
+
+    <section id="reasons">
+        <h2>Why I love you</h2>
+        <p class="sub">tap a card, it's all true</p>
+        <div class="reasons" id="reasonGrid"></div>
+    </section>
+
+    <section id="letter">
+        <h2>A letter, just for you</h2>
+        <p class="sub">open it when you're ready</p>
+        <button class="env" id="env" aria-label="Open the letter">
+            <div class="back"></div>
+            <div class="front"></div>
+            <div class="flap"></div>
+            <div class="seal">💌</div>
+            <small>tap to open</small>
+        </button>
+        <div class="paper" id="paper" aria-live="polite"></div>
+    </section>
+
+    <footer>
+        <div>Forever isn't a long time when it's with you 💗</div>
+        <button id="confetti">Send you a hug 🤍</button>
+    </footer>
+
+    <script>
+        /* ============ EDIT THESE ============ */
+        const HER_NAME = "menggay qhoe";                 // her name or nickname
+        const YOUR_NAME = "Owel";            // your name
+        const START_DATE = "2026-06-15";           // the day you became official (YYYY-MM-DD)
+
+        // Put your photos in the same folder as this file, then list them here.
+        // Example: { src:"photos/us1.jpg", cap:"our first date" }
+        const PHOTOS = [
+            { src: "met.jpg", cap: "the day we've met" },
+            { src: "moments.jpg", cap: "best  moment" },
+            { src: "hehe.jpg", cap: "hehe" },
+        ];
+
+        const CHAPTERS = [
+            { t: "The beginning", d: "Our first shy smiles turned into hours of talking. I think I knew then." },
+            { t: "Getting closer", d: "Inside jokes, late-night calls, and you become my favorite notification." },
+            { t: "Feeling at home", d: "Somewhere along the way, being with you started to feel like home." },
+            { t: "Right now", d: "Four months in and I still smile every time your name lights up my phone." },
+        ];
+
+        const REASONS = [
+            ["Your kiss", "It fixes my worst days without even trying."],
+            ["Your kindness", "You care for me, make me feel safe."],
+            ["Your hugs", "The only place the world goes quiet."],
+            ["Your voice", "It makes the world feel right."],
+            ["Your love", "It makes me a better person."],
+        ];
+
+        const LETTER = `my dearest ${HER_NAME},
+
+happy 4th monthsary, my darling!
+
+four months na tayo, and i'm so grateful na dumating ka sa buhay ko. sa loob ng apat na buwan, you've become more than just my girlfriend. you're my happiness, my comfort, my pahinga, and my favorite person. thankyou for loving me, for being patient with me, and for staying even on the days na hindi ako okay.
+
+i know hindi palaging magiging perfect ang relationship natin, pero i promise to keep choosing you, understanding you, and loving you through all the ups and downs. i may not always be the perfect boyfriend, but i'll always do my best to make you feel loved, appreciated, and safe with me.
+
+if there's one thing i'm sure of, it's that ikaw pa rin ang pipiliin ko, today, tomorrow, and sa mga susunod pang taon. gusto ko pang makasama ka sa maraming monthsaries, gumawa ng memories with you, and someday, look back at this moment knowing na we made it through everything together.
+
+iloveyousomuchhhhhhhhhhh my wifey. thankyou for being my favorite part of every day. four months down, forever to go. ikaw lang, palagi.
+`;
+        const SIGN = `Forever yours,\n${YOUR_NAME} 💗`;
+        /* ==================================== */
+
+        const $ = s => document.querySelector(s);
+
+        // floating hearts
+        (function () {
+            const box = $('#hearts'), icons = ['💗', '💖', '🌸', '✨', '💕'];
+            for (let i = 0; i < 16; i++) {
+                const h = document.createElement('span'); h.className = 'h';
+                h.textContent = icons[i % icons.length];
+                h.style.left = Math.random() * 100 + '%';
+                h.style.fontSize = (14 + Math.random() * 20) + 'px';
+                h.style.animationDuration = (12 + Math.random() * 14) + 's';
+                h.style.animationDelay = (-Math.random() * 20) + 's';
+                box.appendChild(h);
+            }
+        })();
+
+        // live counter
+        function tick() {
+            const s = new Date(START_DATE + 'T00:00:00'), n = new Date();
+            let diff = Math.max(0, n - s);
+            const d = Math.floor(diff / 864e5), h = Math.floor(diff / 36e5) % 24, m = Math.floor(diff / 6e4) % 60, sec = Math.floor(diff / 1e3) % 60;
+            $('#counter').innerHTML = [[d, 'days'], [h, 'hours'], [m, 'minutes'], [sec, 'seconds']]
+                .map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join('');
+        }
+        tick(); setInterval(tick, 1000);
+
+        // gallery
+        const gal = $('#gallery');
+        PHOTOS.forEach(p => {
+            const el = document.createElement('div'); el.className = 'pol'; el.tabIndex = 0;
+            el.innerHTML = `<div class="img">${p.src ? `<img src="${p.src}" alt="${p.cap}">` : '<em>add a photo of us</em>'}</div><p>${p.cap}</p>`;
+            const pick = () => {
+                if (p.src) return;
+                const inp = document.createElement('input'); inp.type = 'file'; inp.accept = 'image/*';
+                inp.onchange = () => {
+                    const f = inp.files[0]; if (!f) return;
+                    el.querySelector('.img').innerHTML = `<img src="${URL.createObjectURL(f)}" alt="${p.cap}">`;
+                };
+                inp.click();
+            };
+            el.onclick = pick;
+            el.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } };
+            gal.appendChild(el);
+        });
+
+        // timeline
+        $('#line').innerHTML = CHAPTERS.map((c, i) => `<div class="m"><h3><span>month ${i + 1}</span>${c.t}</h3><p>${c.d}</p></div>`).join('');
+
+        // reasons
+        $('#reasonGrid').innerHTML = REASONS.map(r => `<button class="card"><i class="f">${r[0]}</i><i class="b">${r[1]}</i></button>`).join('');
+        document.querySelectorAll('.card').forEach(c => c.onclick = () => c.classList.toggle('on'));
+
+        // letter
+        let typed = false;
+        $('#env').onclick = function () {
+            this.classList.add('open');
+            const paper = $('#paper'); paper.classList.add('show');
+            if (typed) return; typed = true;
+            const paras = LETTER.split('\n\n'); paper.innerHTML = '';
+            let pi = 0;
+            (function next() {
+                if (pi >= paras.length) {
+                    const s = document.createElement('p'); s.className = 'sign'; s.textContent = SIGN; paper.appendChild(s); return;
+                }
+                const p = document.createElement('p'); paper.appendChild(p);
+                const txt = paras[pi++]; let i = 0;
+                const t = setInterval(() => { p.textContent = txt.slice(0, ++i); if (i >= txt.length) { clearInterval(t); setTimeout(next, 350); } }, 22);
+            })();
+        };
+
+        // hug / confetti
+        $('#confetti').onclick = () => {
+            for (let i = 0; i < 40; i++) {
+                const s = document.createElement('span'); s.textContent = ['💗', '💖', '🌸', '💕'][i % 4];
+                Object.assign(s.style, { position: 'fixed', left: '50%', top: '70%', fontSize: (16 + Math.random() * 20) + 'px', pointerEvents: 'none', zIndex: 99, transition: 'all 1.6s cubic-bezier(.2,.8,.3,1)', opacity: 1 });
+                document.body.appendChild(s);
+                requestAnimationFrame(() => { s.style.transform = `translate(${(Math.random() - .5) * 600}px,${-200 - Math.random() * 400}px) rotate(${Math.random() * 360}deg)`; s.style.opacity = 0; });
+                setTimeout(() => s.remove(), 1700);
+            }
+        };
+    </script>
+</body>
+
+</html>
